@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
 
-        // 4
+        // 4 lambda
         Observable.just("Hello, world!")
                 .subscribe(s ->
                         System.out.println(s)
