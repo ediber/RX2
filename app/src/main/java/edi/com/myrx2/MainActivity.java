@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // 1
-        /*Observable<String> myObservable = Observable.create(
+        Observable<String> myObservable = Observable.create(
                 new Observable.OnSubscribe<String>() {
                     @Override
                     public void call(Subscriber<? super String> sub) {
@@ -43,11 +43,10 @@ public class MainActivity extends AppCompatActivity {
             public void onError(Throwable e) { }
         };
 
-        myObservable.subscribe(mySubscriber);*/
-
+        myObservable.subscribe(mySubscriber);
 
         //2
-        Observable<String> myObservable =
+       /* Observable<String> myObservable =
                 Observable.just("Hello, world!");
 
         Action1<String> onNextAction = new Action1<String>() {
@@ -57,8 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        myObservable.subscribe(onNextAction);
-// Outputs "Hello, world!"
+        myObservable.subscribe(onNextAction);*/
 
 
         //3
@@ -75,6 +73,15 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(s ->
                         System.out.println(s)
                 );
+
+        // transformation, map
+        Observable.just("Hello, world!")
+                .map(s -> s + " -Dan")
+                .map(s -> s.hashCode())
+                .map(i -> Integer.toString(i))
+                .subscribe(s -> System.out.println(s));
+
+
     }
 
 
