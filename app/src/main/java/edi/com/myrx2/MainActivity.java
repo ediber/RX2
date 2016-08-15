@@ -82,6 +82,11 @@ public class MainActivity extends AppCompatActivity {
                 .subscribe(s -> System.out.println(s));
 
 
+
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////////// part2
+
+
     }
 
 
